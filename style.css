@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* General Container Styling */
+.cT1, .cT2, .cT3 {
+    width: 60vw;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #444444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    color: white;
+}
+.cT1:hover, .cT2:hover, .cT3:hover {
+    transform: scale(1.02);
+}
+.inputA1, .inputA2, .inputA3{
+    display: flex;
+}
+/* Image Styling */
+.img img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border: 1px solid black;
+}
+
+/* Text Styling */
+.details h1 {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+.details p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0 15px;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-in;
+    color: white;
+}
+.details p::first-letter {
+    font-size: 1.2em;
+    color: #007BFF;
+    font-weight: bold;
+}
+.details button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
+}
+.details button:hover {
+    background-color: #0056b3;
+}
+
+/* Animation for Paragraph */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.outputA1, .outputA2, .outputA3 {
+    width: 60vw;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+   
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    transition: transform 0.2s ease-in-out;
+    color: white;
+}
+/* .outputA1:hover, .outputA2:hover, .outputA3:hover {
+    transform: scale(1.02);
+} */
+
+
+
+/* ---------------------------------- */
+/* Styling for img div and img */
+.inputFOA1 {
+    /* height: 100%; */
+    width: 60vw;
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #444444;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+.inputFOA1:hover, .inputFOA1:hover, .inputFOA1:hover {
+    transform: scale(1.02);
+}
+
+.img {
+    margin-right: 15px;
+}
+.img img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+/* Styling for details div */
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for username and comment input fields */
+.details input {
+    margin: 5px 0;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+    width: 15vw;
+    border: 1px solid black;
+}
+.details input::placeholder {
+    color: #999;
+}
+.details textarea {
+    width: 40vw;
+    margin-bottom: 10px;
+}
+.details button {
+    padding: 10px 30px;
+    margin: 10px;
+    border: none;
+
+}
+.details .cancelBtn {
+    background: maroon;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.details .cancelBtn:hover{
+    background: rgb(77, 2, 2);
+}
+.details .replyBtn {
+    background: rgb(0, 81, 0);
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.details .replyBtn:hover{
+    background: rgb(7, 38, 7);
+}
+
+.userComment {
+    width: 60vw;
+    display: flex;
+    margin-bottom: 20px;
+    background-color: rgb(45, 45, 45);
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+.userComment .commentDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.userComment .commentDetails button {
+    padding: 8px 30px;
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+.userComment .commentDetails .deletebtn{
+    background: maroon;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.userComment .commentDetails .deletebtn:hover {
+    background: rgb(67, 11, 11);
+}
+.userComment .commentDetails .editBtn{
+    background: rgb(14, 59, 60);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.userComment .commentDetails .editBtn:hover {
+    background: rgb(29, 103, 152);
+}
+.userComment .img {
+    margin-right: 15px;
+}
+.userComment .img img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+/* Styling for details div */
+.userComment .details {
+    display: flex;
+    flex-direction: column;
+}
