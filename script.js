@@ -6,11 +6,33 @@ const replyButton3 = document.querySelector('.cT3 .details button');
 let oA1 = document.querySelector(".outputA1");
 let oA2 = document.querySelector(".outputA2");
 let oA3 = document.querySelector(".outputA3");
-
-
+let reset = document.querySelector(".reset");
+reset.addEventListener("click", ()=>{
+   
+});
 // User Post Handler ::
-const postUsersComment = (username, comment, pDiv) => {
+
+// const rendomeUserImg = async ()=>{
+//     try {
+//         fetch('https://randomuser.me/api/')
+//   .then(response => {
+//    const data = response.json();
+//    console.log(data);
+   
+// })
+//   .then(data => console.log(data))
+//   .catch(error => console.error('Error:', error));
+        
+//        } catch (error) {
+//            console.log("There is some err", error);
+//        }
+// }
+const postUsersComment = (username, comment, pDiv, oPC) => {
     pDiv.style.display = "none";
+
+//    rendomeUserImg();
+    
+
 
     const div = document.createElement("div");
     div.className = "userComment";
@@ -41,11 +63,24 @@ const postUsersComment = (username, comment, pDiv) => {
 
     div.append(imgDiv);
     div.append(detailsDiv);
-    oA1.append(div);
+    oPC.append(div);
+    deleteBtn.addEventListener("click", ()=>{
+        div.style.display = "none";
+    });
+    editBtn.addEventListener("click", ()=>{
+        div.style.display = "none";
+        pDiv.style.display = "flex";
+    })
 }
 
 
-// Optionally, you can test them by adding event listeners
+/* ----------------------------------------  */
+
+
+
+
+
+
 replyButton1.addEventListener('click', () => {
     const div = document.createElement("div");
     div.className = "inputFOA1";
@@ -83,7 +118,7 @@ replyButton1.addEventListener('click', () => {
 
     let username;
     let comment;
-
+    
     usernameI.addEventListener("change", (e) => {
         username = e.target.value;
     });
@@ -93,7 +128,129 @@ replyButton1.addEventListener('click', () => {
 
     btn.addEventListener("click", () => {
         if (username && comment) {
-            postUsersComment(username, comment, div);
+            postUsersComment(username, comment, div, oA1);
         }
     }); // Closing the event listener properly
+    cancelBtn.addEventListener("click", ()=>{
+        div.style.display = "none";
+    });
+});
+
+
+
+
+
+
+
+
+replyButton2.addEventListener('click', () => {
+    const div = document.createElement("div");
+    div.className = "inputFOA1";
+
+    const imgDiv = document.createElement("div");
+    imgDiv.className = "img";
+    const img = document.createElement("img");
+    imgDiv.append(img);
+
+    const detailsDiv = document.createElement("div");
+    const usernameI = document.createElement("input");
+    usernameI.placeholder = "@username";
+    const commentInput = document.createElement("textarea");
+
+    const btn = document.createElement("button");
+    btn.textContent = "Post";
+    btn.className = "replyBtn";
+
+    const cancelBtn = document.createElement("button");
+    cancelBtn.textContent = "Cancel";
+    cancelBtn.className = "cancelBtn";
+
+    commentInput.className = "iForC";
+    commentInput.placeholder = "Enter Your Comment here..";
+
+    detailsDiv.className = "details";
+
+    detailsDiv.append(usernameI);
+    detailsDiv.append(commentInput);
+    detailsDiv.append(btn);
+    detailsDiv.append(cancelBtn);
+    div.append(imgDiv);
+    div.append(detailsDiv);
+    oA2.append(div);
+
+    let username;
+    let comment;
+    
+    usernameI.addEventListener("change", (e) => {
+        username = e.target.value;
+    });
+    commentInput.addEventListener("change", (e) => {
+        comment = e.target.value;
+    });
+
+    btn.addEventListener("click", () => {
+        if (username && comment) {
+            postUsersComment(username, comment, div, oA2);
+        }
+    }); // Closing the event listener properly
+    cancelBtn.addEventListener("click", ()=>{
+        div.style.display = "none";
+    });
+});
+
+
+
+replyButton3.addEventListener('click', () => {
+    const div = document.createElement("div");
+    div.className = "inputFOA1";
+
+    const imgDiv = document.createElement("div");
+    imgDiv.className = "img";
+    const img = document.createElement("img");
+    imgDiv.append(img);
+
+    const detailsDiv = document.createElement("div");
+    const usernameI = document.createElement("input");
+    usernameI.placeholder = "@username";
+    const commentInput = document.createElement("textarea");
+
+    const btn = document.createElement("button");
+    btn.textContent = "Post";
+    btn.className = "replyBtn";
+
+    const cancelBtn = document.createElement("button");
+    cancelBtn.textContent = "Cancel";
+    cancelBtn.className = "cancelBtn";
+
+    commentInput.className = "iForC";
+    commentInput.placeholder = "Enter Your Comment here..";
+
+    detailsDiv.className = "details";
+
+    detailsDiv.append(usernameI);
+    detailsDiv.append(commentInput);
+    detailsDiv.append(btn);
+    detailsDiv.append(cancelBtn);
+    div.append(imgDiv);
+    div.append(detailsDiv);
+    oA3.append(div);
+
+    let username;
+    let comment;
+    
+    usernameI.addEventListener("change", (e) => {
+        username = e.target.value;
+    });
+    commentInput.addEventListener("change", (e) => {
+        comment = e.target.value;
+    });
+
+    btn.addEventListener("click", () => {
+        if (username && comment) {
+            postUsersComment(username, comment, div, oA3);
+        }
+    }); // Closing the event listener properly
+    cancelBtn.addEventListener("click", ()=>{
+        div.style.display = "none";
+    });
 });
