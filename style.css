@@ -1,14 +1,24 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+html, body {
+    overflow-x: hidden;
+}
+/* Main Container Styling */
 main {
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #2c2f33;
+    color: #ffffff;
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
 }
+
+/* Reset Button Styling */
 .resetBtn {
     width: 100%;
     display: flex;
@@ -18,230 +28,159 @@ main {
 .resetBtn button {
     width: 15rem;
     height: 3rem;
-    background: rgb(1, 1, 101);
-    color: white;
+    background: #0056b3;
+    color: #ffffff;
     font-weight: bold;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     cursor: pointer;
-    transition: 0.5s;
+    transition: background-color 0.4s ease, transform 0.2s ease;
     border: none;
     border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .resetBtn button:hover {
-    background: cadetblue;
-    color: maroon;
+    background: #007bff;
+    transform: scale(1.05);
+    color: #fff;
 }
 
 /* General Container Styling */
-.cT1, .cT2, .cT3 {
+.cT1, .cT2, .cT3, .outputA1, .outputA2, .outputA3, .inputFOA1, .userComment {
     width: 60vw;
     margin: 10px 0;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
-    background-color: #444444;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-    color: white;
+    background-color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.cT1:hover, .cT2:hover, .cT3:hover {
-    transform: scale(1.02);
+.cT1:hover, .cT2:hover, .cT3:hover, .outputA1:hover, .outputA2:hover, .outputA3:hover, .inputFOA1:hover, .userComment:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
-.inputA1, .inputA2, .inputA3{
-    display: flex;
-}
+
 /* Image Styling */
 .img img {
     border-radius: 50%;
     width: 50px;
     height: 50px;
     margin-right: 15px;
-    border: 1px solid black;
+    border: 2px solid #555;
 }
 
 /* Text Styling */
 .details h1 {
-    font-size: 1.2rem;
-    color: #333;
+    font-size: 1.5rem;
     font-weight: bold;
+    color: #ffffff;
     margin: 0;
-    color: white;
 }
 .details p {
     font-size: 1rem;
-    color: #555;
     margin: 5px 0 15px;
     line-height: 1.6;
+    color: #cccccc;
     animation: fadeIn 1s ease-in;
-    color: white;
 }
 .details p::first-letter {
-    font-size: 1.2em;
-    color: #007BFF;
+    font-size: 1.3em;
+    color: #007bff;
     font-weight: bold;
 }
-.details button {
-    padding: 8px 12px;
+
+/* Button Styling */
+.details button, .userComment .commentDetails button {
+    padding: 10px 20px;
     font-size: 0.9rem;
-    color: #fff;
-    background-color: #007BFF;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px;
 }
-.details button:hover {
-    background-color: #0056b3;
+.details button:hover, .userComment .commentDetails button:hover {
+    transform: scale(1.05);
 }
 
-/* Animation for Paragraph */
+/* Specific Button Colors */
+.details .cancelBtn {
+    background: maroon;
+}
+.details .cancelBtn:hover {
+    background: rgb(77, 2, 2);
+}
+.details .replyBtn {
+    background: #007b55;
+}
+.details .replyBtn:hover {
+    background: #006c4c;
+}
+.userComment .commentDetails .deletebtn {
+    background: maroon;
+}
+.userComment .commentDetails .deletebtn:hover {
+    background: #670707;
+}
+.userComment .commentDetails .editBtn {
+    background: #1b6ca8;
+}
+.userComment .commentDetails .editBtn:hover {
+    background: #154e6f;
+}
+
+/* Input Styling */
+.details input, .details textarea {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: #ffffff;
+    font-size: 1rem;
+    width: 100%;
+}
+.details input::placeholder, .details textarea::placeholder {
+    color: #999;
+}
+.details textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Paragraph Animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-.outputA1, .outputA2, .outputA3 {
-    width: 60vw;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 8px;
-   
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
-    transition: transform 0.2s ease-in-out;
-    color: white;
-}
-/* .outputA1:hover, .outputA2:hover, .outputA3:hover {
-    transform: scale(1.02);
-} */
-
-
-
-/* ---------------------------------- */
-/* Styling for img div and img */
-.inputFOA1 {
-    /* height: 100%; */
-    width: 60vw;
-    display: flex;
-    margin-bottom: 20px;
-    background-color: #444444;
-    padding: 15px;
-    border-radius: 8px;
-    transition: transform 0.2s ease-in-out;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-}
-.inputFOA1:hover, .inputFOA1:hover, .inputFOA1:hover {
-    transform: scale(1.02);
-}
-
-.img {
-    margin-right: 15px;
-}
-.img img {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-}
-
-/* Styling for details div */
-.details {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Styling for username and comment input fields */
-.details input {
-    margin: 5px 0;
-    padding: 7px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 0.9rem;
-    width: 15vw;
-    border: 1px solid black;
-}
-.details input::placeholder {
-    color: #999;
-}
-.details textarea {
-    width: 40vw;
-    margin-bottom: 10px;
-}
-.details button {
-    padding: 10px 30px;
-    margin: 10px;
-    border: none;
-
-}
-.details .cancelBtn {
-    background: maroon;
-    font-weight: bold;
-    transition: 0.5s;
-    cursor: pointer;
-}
-.details .cancelBtn:hover{
-    background: rgb(77, 2, 2);
-}
-.details .replyBtn {
-    background: rgb(0, 81, 0);
-    font-weight: bold;
-    transition: 0.5s;
-    cursor: pointer;
-}
-.details .replyBtn:hover{
-    background: rgb(7, 38, 7);
-}
-
+/* Container for Comments */
 .userComment {
-    width: 60vw;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #3a3f44;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     display: flex;
-    margin-bottom: 20px;
-    background-color: rgb(45, 45, 45);
-    padding: 15px;
-    border-radius: 8px;
-    transition: transform 0.2s ease-in-out;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    color: white;
+    align-items: center;
 }
 .userComment .commentDetails {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-.userComment .commentDetails button {
-    padding: 8px 30px;
-    border: none;
-    font-weight: bold;
-    color: white;
-}
-.userComment .commentDetails .deletebtn{
-    background: maroon;
-    transition: 0.5s;
-    cursor: pointer;
-}
-.userComment .commentDetails .deletebtn:hover {
-    background: rgb(67, 11, 11);
-}
-.userComment .commentDetails .editBtn{
-    background: rgb(14, 59, 60);
-    transition: 0.5s;
-    cursor: pointer;
-}
-.userComment .commentDetails .editBtn:hover {
-    background: rgb(29, 103, 152);
+    gap: 15px;
+    color: #ffffff;
 }
 .userComment .img {
     margin-right: 15px;
 }
-.userComment .img img {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-}
 
-/* Styling for details div */
-.userComment .details {
+/* User Comment and Post Background */
+.inputFOA1 {
+    width: 60vw;
     display: flex;
-    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: #2c2f33;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }

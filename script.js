@@ -7,9 +7,11 @@ let oA1 = document.querySelector(".outputA1");
 let oA2 = document.querySelector(".outputA2");
 let oA3 = document.querySelector(".outputA3");
 let reset = document.querySelector(".reset");
+
 reset.addEventListener("click", ()=>{
-   
+    location.reload();
 });
+
 // User Post Handler ::
 
 // const rendomeUserImg = async ()=>{
